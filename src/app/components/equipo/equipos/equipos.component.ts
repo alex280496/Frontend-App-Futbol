@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Equipo} from '../../../models/equipo';
 import { EquipoService}  from '../../../services/equipo';
+import {Global} from '../../../services/global';
 @Component({
   selector: 'app-equipos',
   templateUrl: './equipos.component.html',
@@ -9,9 +10,12 @@ import { EquipoService}  from '../../../services/equipo';
 })
 export class EquiposComponent implements OnInit {
   public equipos:Equipo;
+  public imgequipo:string;
   constructor(
     private _equipoService:EquipoService
-  ) { }
+  ) { 
+    this.imgequipo=Global.urlimgequipo;
+  }
 
   ngOnInit() {
     this._equipoService.getequipos().subscribe(
