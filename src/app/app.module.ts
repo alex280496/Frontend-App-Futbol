@@ -14,6 +14,7 @@ import { SettingComponent } from './components/adminlte/setting/setting.componen
 import { EquiposComponent } from './components/equipo/equipos/equipos.component';
 import { EquipoNewComponent } from './components/equipo/equipo-new/equipo-new.component';
 import { EquipoEditComponent } from './components/equipo/equipo-edit/equipo-edit.component';
+import { EquipoShowComponent } from './components/equipo/equipo-show/equipo-show.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { EquipoEditComponent } from './components/equipo/equipo-edit/equipo-edit
     SettingComponent,
     EquiposComponent,
     EquipoNewComponent,
-    EquipoEditComponent
+    EquipoEditComponent,
+    EquipoShowComponent
   ],
   imports: [
     BrowserModule,

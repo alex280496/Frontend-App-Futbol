@@ -1,1 +1,20 @@
-<p>equipo-edit works!</p>
+<div>
+    <form #equipoForm="ngForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input class="form-control" type="text" placeholder="Nombre" name="nombre" 
+            #nombre="ngModel" [(ngModel)]=equipo.nombre>
+        </div>
+        <div class="form-group">
+            <label for="categoria">Categoria</label>
+            <input class="form-control" type="text" name="categoria" id="categoria" 
+            placeholder="Categoria" #categoria="ngModel" [(ngModel)]=equipo.categoria>
+        </div>
+        <div class="form-group">
+            <label for="imagen">Imagen o Sello</label>
+            <input type="file" name="imagen"  (change)="cargandoImagen($event.target.files)">
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar Datos</button>
+    </form>
+</div>
+

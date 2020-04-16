@@ -6,7 +6,7 @@
             <div class="card-body">
                 <h5 class="card-title">{{equipo.nombre}}</h5>
                 <p class="card-text">{{equipo.categoria}}</p>
-                <a href="#" class="btn btn-primary">Ver mas detalles</a>
+                <a [routerLink]="['/equipo-show/',equipo.id]" class="btn btn-primary">Ver mas detalles</a>
             </div>
         </div>
     </div>

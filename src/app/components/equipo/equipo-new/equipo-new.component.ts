@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Equipo} from '../../../models/equipo';
 import {EquipoService} from '../../../services/equipo.service';
+import {Router,ActivatedRoute,Params} from '@angular/router';
 @Component({
   selector: 'app-equipo-new',
   templateUrl: './equipo-new.component.html',
@@ -11,7 +12,9 @@ export class EquipoNewComponent implements OnInit {
   public equipo:Equipo;
   public imagen:File;
   constructor(
-    private _equipoService:EquipoService
+    private _equipoService:EquipoService,
+    private _router:Router,
+    private _route:ActivatedRoute
   ) { 
     this.equipo=new Equipo('','',null);
     
@@ -34,6 +37,7 @@ export class EquipoNewComponent implements OnInit {
     this._equipoService.guardarimagenes(this.imagen).subscribe(
       response=>{
         console.log(response);
+        this._router.navigate(['/equipos']);
       },
       error=>{
         console.log(error);
