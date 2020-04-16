@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Equipo} from '../../../models/equipo';
-import { EquipoService}  from '../../../services/equipo';
+import { EquipoService}  from '../../../services/equipo.service';
 import {Global} from '../../../services/global';
 @Component({
   selector: 'app-equipos',

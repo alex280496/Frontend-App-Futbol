@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Equipo} from '../../../models/equipo';
-import {EquipoService} from '../../../services/equipo';
+import {EquipoService} from '../../../services/equipo.service';
 @Component({
   selector: 'app-equipo-new',
   templateUrl: './equipo-new.component.html',
@@ -9,15 +9,16 @@ import {EquipoService} from '../../../services/equipo';
 })
 export class EquipoNewComponent implements OnInit {
   public equipo:Equipo;
+  public imagen:File;
   constructor(
     private _equipoService:EquipoService
   ) { 
     this.equipo=new Equipo('','',null);
-    console.log(this.equipo);
+    
   }
   cargandoImagen(files:FileList){
-  this.equipo.imagen=files[0];
-
+  this.imagen=files[0];
+    console.log(this.equipo);
   }
   ngOnInit() {
   }
@@ -25,12 +26,19 @@ export class EquipoNewComponent implements OnInit {
     this._equipoService.saveequipos(this.equipo).subscribe(
       response=>{
         console.log(response);
-        alert('equipo guardado exitosamente');
       },
       error=>{
         console.log(error);
       }
     );
+    this._equipoService.guardarimagenes(this.imagen).subscribe(
+      response=>{
+        console.log(response);
+      },
+      error=>{
+        console.log(error);
+      }
+    )
   }
 
 }
