@@ -22,10 +22,15 @@ export class EquipoService{
         let headers=new HttpHeaders({'Content-Type':'application/json'});
         return this._http.post(this.url+'equipos',equipo,{headers:headers});
     }
-    guardarimagenes(fileimagen:File){
+    guardarimagenes(fileimagen:File,id){
         const formData =new FormData();
         formData.append('imagen',fileimagen);
-        return this._http.post(this.url+'guardarimagen',formData);
+        return this._http.post(this.url+'guardarimagen/'+id,formData);
+      }
+    guardarimagenesupdate(fileimagen:File,id){
+        const formData =new FormData();
+        formData.append('imagen',fileimagen);
+        return this._http.post(this.url+'guardarimagenupdate/'+id,formData);
       }
     getequipo(id):Observable<any>{
         return this._http.get(this.url+'equipos/'+id);

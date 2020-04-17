@@ -11,12 +11,13 @@ import {Router,ActivatedRoute,Params} from '@angular/router';
 export class EquipoNewComponent implements OnInit {
   public equipo:Equipo;
   public imagen:File;
+  public valida:string=null;
   constructor(
     private _equipoService:EquipoService,
     private _router:Router,
     private _route:ActivatedRoute
   ) { 
-    this.equipo=new Equipo('','',null);
+    this.equipo=new Equipo(null,'','',null);
     
   }
   cargandoImagen(files:FileList){
@@ -28,13 +29,18 @@ export class EquipoNewComponent implements OnInit {
   onSubmit(){
     this._equipoService.saveequipos(this.equipo).subscribe(
       response=>{
-        console.log(response);
+        this.equipo=response;
+        console.log(this.equipo);
+        this.guardarimagen(this.equipo.id);
       },
       error=>{
         console.log(error);
       }
     );
-    this._equipoService.guardarimagenes(this.imagen).subscribe(
+     
+  }
+  guardarimagen(id){
+    this._equipoService.guardarimagenes(this.imagen,this.equipo.id).subscribe(
       response=>{
         console.log(response);
         this._router.navigate(['/equipos']);
@@ -42,7 +48,9 @@ export class EquipoNewComponent implements OnInit {
       error=>{
         console.log(error);
       }
-    )
+    );
   }
+  
+  
 
 }
