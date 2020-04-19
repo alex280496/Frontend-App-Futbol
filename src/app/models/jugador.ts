@@ -8,7 +8,7 @@ export class Jugador{
         public posicion_juego:string,
         public numero:number,
         public fecha_nacimiento:Date,
-        public imagen:string,
+        public imagen:File,
     ){
 
     }

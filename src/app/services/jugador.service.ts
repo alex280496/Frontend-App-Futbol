@@ -3,6 +3,7 @@ import {HttpClient,HttpHeaders} from "@angular/common/http";
 import {Observable} from 'rxjs';
 import {Global} from './global';
 import {Jugador} from '../models/jugador';
+
 @Injectable()
 
 export class JugadorService{
@@ -16,8 +17,14 @@ export class JugadorService{
     getjugadores():Observable<any>{
         return this._http.get(this.url+'jugadores');
     }
-    savejugador(jugador):Observable<any>{
+    savejugador(jugador,Fileimagen:File):Observable<any>{
+    
         let headers=new HttpHeaders('Content-type:application/json');
-        return this._http.post(this.url+'jugador',jugador,{headers:headers});
+        return this._http.post(this.url+'jugadores',jugador,{headers:headers});
+    }
+    guardarimagen(Fileimagen:File,id){
+        const formData=new FormData();
+        formData.append('imagen',Fileimagen);
+        return this._http.post(this.url+'guardarimagenjugador/'+id,formData)
     }
 }
