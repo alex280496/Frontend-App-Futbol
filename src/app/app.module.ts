@@ -15,6 +15,10 @@ import { EquiposComponent } from './components/equipo/equipos/equipos.component'
 import { EquipoNewComponent } from './components/equipo/equipo-new/equipo-new.component';
 import { EquipoEditComponent } from './components/equipo/equipo-edit/equipo-edit.component';
 import { EquipoShowComponent } from './components/equipo/equipo-show/equipo-show.component';
+import { JugadoresComponent } from './components/jugador/jugadores/jugadores.component';
+import { JugadorNewComponent } from './components/jugador/jugador-new/jugador-new.component';
+import { JugadorEditComponent } from './components/jugador/jugador-edit/jugador-edit.component';
+import { JugadorShowComponent } from './components/jugador/jugador-show/jugador-show.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,11 @@ import { EquipoShowComponent } from './components/equipo/equipo-show/equipo-show
     EquiposComponent,
     EquipoNewComponent,
     EquipoEditComponent,
-    EquipoShowComponent
+    EquipoShowComponent,
+    JugadoresComponent,
+    JugadorNewComponent,
+    JugadorEditComponent,
+    JugadorShowComponent
   ],
   imports: [
     BrowserModule,

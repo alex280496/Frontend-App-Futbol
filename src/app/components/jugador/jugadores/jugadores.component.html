@@ -1,0 +1,14 @@
+<a [routerLink]="['/jugador-new']" class="btn btn-primary">NUEVO JUGADOR</a>
+<div class="clearfix"></div>
+<div class="container">
+    <div class="panel panel-default" *ngFor="let jugador of jugadores">
+        <div class="panel-heading">
+          <h3 class="panel-title">{{jugador.nombre}} {{jugador.apellido}}</h3>
+        </div>
+        <div class="panel-body">
+          Posicion de Juego: {{jugador.posicion_juego}}
+         <br>
+          # : {{jugador.numero}}
+        </div>
+      </div>
+</div>
