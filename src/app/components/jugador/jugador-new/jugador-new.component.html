@@ -36,6 +36,18 @@
             #fecha_nacimiento="ngModel" [(ngModel)]=jugador.fecha_nacimiento>
         </div>
         <div class="form-group">
+            <label for="equipo">Escoge al equipo que pertenece</label>
+            <ng-select  [items]="equipos"
+                [virtualScroll]="true"
+                bindLabel="nombre"
+                bindValue="id"
+                name="equipo"
+                placeholder="Selecciona un Equipo"
+                [(ngModel)]="jugador.equipo_id">
+            </ng-select>
+        </div>
+        
+        <div class="form-group">
             <label for="imagen">Imagen</label>
             <input type="file" name="imagen" class="form-control" (change)="cargandoImagen($event.target.files)">
         </div>

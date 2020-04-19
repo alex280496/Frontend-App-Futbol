@@ -6,9 +6,14 @@
           <h3 class="panel-title">{{jugador.nombre}} {{jugador.apellido}}</h3>
         </div>
         <div class="panel-body">
-          Posicion de Juego: {{jugador.posicion_juego}}
+          <img src="{{urljugador + jugador.imagen }}" alt="" width="300" height="300">
+          <div class="clearfix"></div>
+          <strong>Posicion de Juego: </strong> {{jugador.posicion_juego}}
          <br>
-          # : {{jugador.numero}}
+          <strong># de camiseta : </strong> {{jugador.numero}}
+        </div>
+        <div class="panel-footer">
+            <a [routerLink]="['/jugador-show/',jugador.id]" class="btn btn-primary">Ver mas detalles</a>
         </div>
       </div>
 </div>

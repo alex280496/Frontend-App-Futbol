@@ -17,9 +17,11 @@ export class JugadorService{
     getjugadores():Observable<any>{
         return this._http.get(this.url+'jugadores');
     }
-    savejugador(jugador,Fileimagen:File):Observable<any>{
-    
-        let headers=new HttpHeaders('Content-type:application/json');
+    getequipos():Observable<any>{
+        return this._http.get(this.url+'equipos');
+    }
+    savejugador(jugador):Observable<any>{
+        let headers=new HttpHeaders({'Content-type':'application/json'});
         return this._http.post(this.url+'jugadores',jugador,{headers:headers});
     }
     guardarimagen(Fileimagen:File,id){

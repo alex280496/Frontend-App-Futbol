@@ -9,6 +9,7 @@ export class Jugador{
         public numero:number,
         public fecha_nacimiento:Date,
         public imagen:File,
+        public equipo_id:number
     ){
 
     }

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {Jugador} from '../../../models/jugador';
 import {JugadorService} from '../../../services/jugador.service';
+import {Equipo} from '../../../models/equipo';
+import {Router,ActivatedRoute,Params} from '@angular/router';
+
 @Component({
   selector: 'app-jugador-new',
   templateUrl: './jugador-new.component.html',
@@ -9,19 +12,33 @@ import {JugadorService} from '../../../services/jugador.service';
 })
 export class JugadorNewComponent implements OnInit {
   public jugador:Jugador;
+  public equipos:Equipo;
+  public imagen:File;
   constructor(
-    private _jugadorService:JugadorService
+    private _jugadorService:JugadorService,
+    private _router:Router,
+    private _route:ActivatedRoute
   ) { 
-    this.jugador=new Jugador(null,'','','','','',null,null,null);
+    this.jugador=new Jugador(null,'','','','','',null,null,null,null);
   }
   cargandoImagen(files:FileList){
-    this.jugador.imagen=files[0];
+    this.imagen=files[0];
       
     }
   ngOnInit() {
+    this._jugadorService.getequipos().subscribe(
+      response=>{
+        this.equipos=response;
+        console.log(this.equipos);
+      },
+      error=>{
+        console.log(error);
+      }
+    );
   }
+  
   onSubmit(){
-    this._jugadorService.savejugador(this.jugador,this.jugador.imagen).subscribe(
+    this._jugadorService.savejugador(this.jugador).subscribe(
       response=>{
         this.jugador=response;
         console.log(this.jugador);
@@ -33,9 +50,10 @@ export class JugadorNewComponent implements OnInit {
     );
   }
   guardarimagenjugador(id){
-    this._jugadorService.guardarimagen(this.jugador.imagen,id).subscribe(
+    this._jugadorService.guardarimagen(this.imagen,id).subscribe(
       response=>{
         console.log(response);
+        this._router.navigate(['/jugadores']);
       },
       error=>{
         console.log(error);

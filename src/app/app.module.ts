@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import {routing, appRoutingProviders} from './app.routing';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
-//import { NgSelectModule } from '@ng-select/ng-select';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/adminlte/header/header.component';
@@ -41,8 +41,8 @@ import { JugadorShowComponent } from './components/jugador/jugador-show/jugador-
     BrowserModule,
     routing,
     HttpClientModule,
-    FormsModule
-    //NgSelectModule
+    FormsModule,
+    NgSelectModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]
