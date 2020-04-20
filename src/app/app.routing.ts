@@ -18,8 +18,8 @@ const appRoutes:Routes=[
     {path:'equipo-show/:id',component:EquipoShowComponent},
     {path:'jugadores',component:JugadoresComponent},
     {path:'jugador-new',component:JugadorNewComponent},
-    {path:'jugador-edit',component:JugadorEditComponent},
-    {path:'jugador-show',component:JugadorShowComponent}
+    {path:'jugador-edit/:id',component:JugadorEditComponent},
+    {path:'jugador-show/:id',component:JugadorShowComponent}
     
 ];
 export const appRoutingProviders:any[]=[];

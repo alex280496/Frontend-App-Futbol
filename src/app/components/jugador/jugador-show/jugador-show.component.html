@@ -1,1 +1,21 @@
-<p>jugador-show works!</p>
+<div class="container">
+    <div *ngFor="let datosju of jugador">
+        Cedula: {{datosju.cedula}}
+        <br> Nombre: {{datosju.nombrejugador}} {{datosju.apellido}}
+        <hr> Telefono: {{datosju.telefono}}
+        <br> Fecha de Nacimiento: {{datosju.fecha_nacimiento}}
+        <hr> Posicion de Juego: {{datosju.posicion_juego}}
+        <br> Numero: {{datosju.numero}}
+        <hr>
+        <br> Equipo: {{datosju.nombre}}
+
+        <hr>
+        <img src="{{urlimagen + datosju.imagen}}" alt="" width="400" height="400">
+        <hr>
+        <div class="form-group">
+            <a [routerLink]="['/judador/'+ this.jugador.id]" class="btn btn-success">Editar Informacion</a>
+            <button class="btn btn-warning">Eliminar Jugador</button>
+        </div>
+    </div>
+
+</div>

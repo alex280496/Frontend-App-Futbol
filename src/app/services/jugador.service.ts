@@ -29,4 +29,7 @@ export class JugadorService{
         formData.append('imagen',Fileimagen);
         return this._http.post(this.url+'guardarimagenjugador/'+id,formData)
     }
+    getjugador(id):Observable<any>{
+        return this._http.get(this.url+'jugadores/'+id);
+    }
 }
