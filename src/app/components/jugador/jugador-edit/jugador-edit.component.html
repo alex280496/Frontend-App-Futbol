@@ -1,1 +1,65 @@
-<p>jugador-edit works!</p>
+<form action="" #jugadorForm="ngForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="cedula">Cedula</label>
+        <input type="text" class="form-control" name="cedula" placeholder="Cedula"
+        #cedula="ngModel" [(ngModel)]=jugador.cedula>
+    </div>
+    <div class="form-group">
+        <label for="nombrejugador">Nombre</label>
+        <input type="text" class="form-control" name="nombrejugador" placeholder="Nombre"
+        #nombrejugador="ngModel" [(ngModel)]=jugador.nombrejugador>
+    </div>
+    <div class="form-group">
+        <label for="apellido">Apellido</label>
+        <input type="text" name="apellido" placeholder="Apellido" class="form-control"
+        #apellido="ngModel" [(ngModel)]=jugador.apellido>
+    </div>
+    <div class="form-group">
+        <label for="telefono">Telefono</label>
+        <input type="text" name="telefono" class="form-control" placeholder="Telefono"
+        #telefono="ngModel" [(ngModel)]=jugador.telefono>
+    </div>
+    <div class="form-group">
+        <label for="posicion_juego">Posicion de Juego</label>
+        <input type="posicion_juego" class="form-control" name="posicion_juego" placeholder="Posicion de Juego"
+        #posicion_juego="ngModel" [(ngModel)]=jugador.posicion_juego>
+    </div>
+    <div class="form-group">
+        <label for="numero">Numero</label>
+        <input type="number" name="numero" class="form-control"
+        #numero="ngModel" [(ngModel)]=jugador.numero>
+    </div>
+    <div class="form-group">
+        <label for="fecha_nacimiento">Fecha de Nacimeinto</label>
+        <input type="date" name="fecha_nacimiento" class="form-control"
+        #fecha_nacimiento="ngModel" [(ngModel)]=jugador.fecha_nacimiento>
+    </div>
+    <div class="form-group">
+        <label for="equipo">Equipo</label>
+        <div *ngFor="let equipo of equipos">
+            <p *ngIf="jugador.nombre==equipo.nombre">{{equipo.id}}</p>
+        </div>
+
+        <ng-select  [items]="equipos"
+                [virtualScroll]="true"
+                bindLabel="nombre"
+                bindValue="id_equipo"
+                name="equipo"
+                placeholder={{jugador.nombre}}
+
+                [(ngModel)]="jugador.equipo_id">
+        </ng-select>
+        <p>
+            Selected city ID: {{jugador.equipo_id}}
+        </p>
+
+    </div>
+    <div class="form-group">
+        <label for="imagen">Imagen</label>
+        <div class="clearfix"></div>
+        <img src="{{urljugador + jugador.imagen}}" alt="" width="150" height="150">
+        
+        <input type="file" name="imagen" class="form-control" (change)="cargandoImagen($event.target.files)">
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+</form>

@@ -32,4 +32,11 @@ export class JugadorService{
     getjugador(id):Observable<any>{
         return this._http.get(this.url+'jugadores/'+id);
     }
+    updatejugador(equipo,id):Observable<any>{
+        let headers=new HttpHeaders({'Content-Type':'application/json'});
+        return this._http.put(this.url+'jugadores/'+id,equipo,{headers:headers});
+    }
+    deletejugador(id):Observable<any>{
+        return this._http.delete(this.url+'jugadores/'+id);
+    }
 }

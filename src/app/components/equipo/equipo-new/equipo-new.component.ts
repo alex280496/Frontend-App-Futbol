@@ -22,7 +22,7 @@ export class EquipoNewComponent implements OnInit {
   }
   cargandoImagen(files:FileList){
   this.imagen=files[0];
-    console.log(this.equipo);
+    //console.log(this.equipo);
   }
   ngOnInit() {
   }
@@ -31,7 +31,8 @@ export class EquipoNewComponent implements OnInit {
       response=>{
         this.equipo=response;
         console.log(this.equipo);
-        this.guardarimagen(this.equipo.id);
+        this.guardarimagen(this.equipo.id_equipo);
+        console.log(this.equipo.id_equipo);
       },
       error=>{
         console.log(error);
@@ -40,7 +41,7 @@ export class EquipoNewComponent implements OnInit {
      
   }
   guardarimagen(id){
-    this._equipoService.guardarimagenes(this.imagen,this.equipo.id).subscribe(
+    this._equipoService.guardarimagenes(this.imagen,this.equipo.id_equipo).subscribe(
       response=>{
         console.log(response);
         this._router.navigate(['/equipos']);

@@ -40,11 +40,12 @@
             <ng-select  [items]="equipos"
                 [virtualScroll]="true"
                 bindLabel="nombre"
-                bindValue="id"
+                bindValue="id_equipo"
                 name="equipo"
                 placeholder="Selecciona un Equipo"
                 [(ngModel)]="jugador.equipo_id">
             </ng-select>
+           
         </div>
         
         <div class="form-group">

@@ -33,7 +33,7 @@ export class EquipoEditComponent implements OnInit {
   }
   
   onSubmit(){
-    this._equipoService.updateequipo(this.equipo,this.equipo.id).subscribe(
+    this._equipoService.updateequipo(this.equipo,this.equipo.id_equipo).subscribe(
       response=>{
         console.log(response);
         this._router.navigate(['/equipos']);
@@ -44,7 +44,7 @@ export class EquipoEditComponent implements OnInit {
     );
     if(this.imagen!=null){
       console.log('noes nulo');
-      this._equipoService.guardarimagenesupdate(this.imagen,this.equipo.id).subscribe(
+      this._equipoService.guardarimagenesupdate(this.imagen,this.equipo.id_equipo).subscribe(
         response=>{
           console.log(response);
         },

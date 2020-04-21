@@ -1,19 +1,18 @@
-<a [routerLink]="['/jugador-new']" class="btn btn-primary">NUEVO JUGADOR</a>
-<div class="clearfix"></div>
 <div class="container">
-    <div class="panel panel-default" *ngFor="let jugador of jugadores">
-        <div class="panel-heading">
-          <h3 class="panel-title">{{jugador.nombre}} {{jugador.apellido}}</h3>
-        </div>
-        <div class="panel-body">
-          <img src="{{urljugador + jugador.imagen }}" alt="" width="300" height="300">
-          <div class="clearfix"></div>
-          <strong>Posicion de Juego: </strong> {{jugador.posicion_juego}}
-         <br>
-          <strong># de camiseta : </strong> {{jugador.numero}}
-        </div>
-        <div class="panel-footer">
-            <a [routerLink]="['/jugador-show/',jugador.id]" class="btn btn-primary">Ver mas detalles</a>
-        </div>
+  <a [routerLink]="['/jugador-new']" class="btn btn-primary">NUEVO JUGADOR</a>
+
+  <div class="row">
+    <div class="col-lg-2" *ngFor="let jugador of jugadores">
+      <div class="card-body">
+        <img src="{{urljugador + jugador.imagen }}" alt="" width="150" height="150">
+        <div class="clearfix"></div>
+
+        {{jugador.nombrejugador}} {{jugador.apellido}}
+        <br> {{jugador.posicion_juego}} - {{jugador.numero}}
+
       </div>
+      <a [routerLink]="['/jugador-show/',jugador.id]" class="btn btn-primary">Ver mas detalles</a>
+    </div>
+  </div>
+
 </div>
