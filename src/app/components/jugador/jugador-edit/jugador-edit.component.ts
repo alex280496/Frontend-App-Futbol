@@ -67,6 +67,7 @@ export class JugadorEditComponent implements OnInit {
             console.log(this.jugador);
             this.aux=response[0].id_equipo;
             console.log(this.aux);
+            //el auxiliar sirve en caso que no se toque el select de los equipos
           },
           error=>{
             console.log(error);
