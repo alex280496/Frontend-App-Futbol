@@ -19,6 +19,10 @@ import { JugadoresComponent } from './components/jugador/jugadores/jugadores.com
 import { JugadorNewComponent } from './components/jugador/jugador-new/jugador-new.component';
 import { JugadorEditComponent } from './components/jugador/jugador-edit/jugador-edit.component';
 import { JugadorShowComponent } from './components/jugador/jugador-show/jugador-show.component';
+import { ArbitrajesComponent } from './components/arbitraje/arbitrajes/arbitrajes.component';
+import { ArbitrajeNewComponent } from './components/arbitraje/arbitraje-new/arbitraje-new.component';
+import { ArbitrajeEditComponent } from './components/arbitraje/arbitraje-edit/arbitraje-edit.component';
+import { ArbitrajeShowComponent } from './components/arbitraje/arbitraje-show/arbitraje-show.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +39,11 @@ import { JugadorShowComponent } from './components/jugador/jugador-show/jugador-
     JugadoresComponent,
     JugadorNewComponent,
     JugadorEditComponent,
-    JugadorShowComponent
+    JugadorShowComponent,
+    ArbitrajesComponent,
+    ArbitrajeNewComponent,
+    ArbitrajeEditComponent,
+    ArbitrajeShowComponent
   ],
   imports: [
     BrowserModule,

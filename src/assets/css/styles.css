@@ -1,7 +1,12 @@
 .clearfix{
     clear: both;
 }
-
+.card{
+    border: 1px solid #CAC5C4 ;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+}
 .container{
     margin-top: 6px;
 }

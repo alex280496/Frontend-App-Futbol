@@ -2,7 +2,7 @@
   <a [routerLink]="['/jugador-new']" class="btn btn-primary">NUEVO JUGADOR</a>
 
   <div class="row">
-    <div class="col-lg-2" *ngFor="let jugador of jugadores">
+    <div class=" card col-lg-2" *ngFor="let jugador of jugadores">
       <div class="card-body">
         <img src="{{urljugador + jugador.imagen }}" alt="" width="150" height="150">
         <div class="clearfix"></div>

@@ -1,0 +1,11 @@
+<div class="container">
+        <a [routerLink]="['/arbitraje-new']" class="btn btn-primary">NUEVO ARBITRAJE</a>
+
+    <div class="card " style="width: 18rem;" *ngFor="let datosarbitraje of arbitrajes">
+        <div class="card-body">
+          <h5 class="card-title"> Arbitraje correspondiente a {{datosarbitraje.fecha}}</h5>
+          <p class="card-text">Valor Cancelado: {{datosarbitraje.valor_cancelado}}.</p>
+          <a [routerLink]="['/arbitraje-show/', datosarbitraje.id]" class="btn btn-primary">Ver mas detalles</a>
+        </div>
+      </div>
+</div>
