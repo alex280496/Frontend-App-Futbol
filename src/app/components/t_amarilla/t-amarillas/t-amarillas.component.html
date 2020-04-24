@@ -9,12 +9,12 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let amarilla of tarjeta_amarilla">
-                <td>{{amarilla.fecha}}</td>
-                <td>{{amarilla.observaciones}}</td>
-                <td>{{amarilla.nombrejugador}}</td>
+            <tr *ngFor="let datos of tarjeta_amarilla">
+                <td>{{datos.fecha}}</td>
+                <td>{{datos.observaciones}}</td>
+                <td>{{datos.nombrejugador}}</td>
                 <td>
-                    <a href="" class="btn btn-primary">Editar</a>
+                    <a [routerLink]="['/tamarillas-edit/',datos.id_ta]" class="btn btn-primary edit">Editar</a>
                     <a href="" class="btn btn-warning">Eliminar</a>
                 </td>
             </tr>
