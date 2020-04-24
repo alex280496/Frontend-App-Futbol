@@ -24,5 +24,8 @@ export class ArbitrajesComponent implements OnInit {
     );
    
   }
+  delete(){
+    
+  }
 
 }
