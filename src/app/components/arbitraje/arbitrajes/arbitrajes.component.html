@@ -1,11 +1,28 @@
 <div class="container">
         <a [routerLink]="['/arbitraje-new']" class="btn btn-primary new">NUEVO ARBITRAJE</a>
 
-    <div class="card " style="width: 18rem;" *ngFor="let datosarbitraje of arbitrajes">
-        <div class="card-body">
-          <h5 class="card-title"> Arbitraje correspondiente a {{datosarbitraje.fecha}}</h5>
-          <p class="card-text">Valor Cancelado: {{datosarbitraje.valor_cancelado}}.</p>
-          <a [routerLink]="['/arbitraje-show/', datosarbitraje.id]" class="btn btn-primary">Ver mas detalles</a>
-        </div>
-      </div>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+                <th>Fecha</th>
+                <th>Valor Cancelado</th>
+                <th>Valor Restante</th>
+                <th>Jugador</th>
+                <th>Opciones</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let datosarbitraje of arbitrajes">
+                <td>{{datosarbitraje.fecha}}</td>
+                <td>{{datosarbitraje.valor_cancelado}}</td>
+                <td>{{datosarbitraje.valor_restante}}</td>
+                <td>{{datosarbitraje.nombrejugador}} - {{datosarbitraje.cedula}}</td>
+                <td>
+                    <a [routerLink]="['/arbitraje-edit/', datosarbitraje.id_arbitraje]" class="btn btn-primary">Editar</a>
+                    <a  class="btn btn-warning">Eliminar </a>
+                </td>
+              </tr>
+          </tbody>
+        </table>
+   
 </div>

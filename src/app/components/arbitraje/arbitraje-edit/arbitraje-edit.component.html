@@ -1,1 +1,29 @@
-<p>arbitraje-edit works!</p>
+<form action="" #arbitrajeform="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group"> 
+        <label for="fecha">Fecha</label>
+        <input type="date" name="fecha" class="form-control"
+        #fecha="ngModel" [(ngModel)]=arbitraje.fecha>
+    </div>
+    <div class="form-group">
+        <label for="valor_cancelado">Valor Cancelado</label>
+        <input type="number" name="valor_cancelado" class="form-control"
+        #valor_cancelado="ngModel" [(ngModel)]=arbitraje.valor_cancelado>
+    </div>
+    <div class="form-group">
+        <label for="valor_restante"> Valor Restante</label>
+        <input type="number" name="valor_restante" class="form-control"
+        #valor_restante="ngModel" [(ngModel)]=arbitraje.valor_restante>
+    </div>
+    <div class="form-group">
+        <label for="jugador">Jugador</label>
+        <ng-select [items]="jugadores"
+        [virtualScroll]="true"
+        bindLabel="nombrejugador"
+        bindValue="id"
+        name="jugadores"
+        placeholder="{{arbitraje.nombrejugador}}"
+        [(ngModel)]="arbitraje.jugador_id">
+</ng-select>
+    </div>
+    <button class="btn btn-primary">Guardar Informacion</button>
+</form>
