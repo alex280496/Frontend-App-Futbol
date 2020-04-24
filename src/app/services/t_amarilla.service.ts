@@ -15,12 +15,15 @@ export class TarjetaAmarillaService{
     getamarillas():Observable<any>{
         return this._http.get(this.url + 'tamarillas');
     }
+    getjugadores():Observable<any>{
+        return this._http.get(this.url + 'jugadores');
+    }
     getamarilla(id):Observable<any>{
         return  this._http.get(this.url + 'tamarillas/'+id);
     }
     saveamarilla(amarilla):Observable<any>{
         let headers=new HttpHeaders({'Content-Type':'application/json'});
-        return this._http.post(this.url +'tamarilas',amarilla,{headers:headers});
+        return this._http.post(this.url +'tamarillas',amarilla,{headers:headers});
     }
     updateamarilla(amarilla,id):Observable<any>{
         let headers=new HttpHeaders({'Content-Type':'application/json'});
