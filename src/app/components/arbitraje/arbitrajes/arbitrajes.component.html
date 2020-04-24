@@ -19,7 +19,7 @@
                 <td>{{datosarbitraje.nombrejugador}} - {{datosarbitraje.cedula}}</td>
                 <td>
                     <a [routerLink]="['/arbitraje-edit/', datosarbitraje.id_arbitraje]" class="btn btn-primary">Editar</a>
-                    <a  class="btn btn-warning">Eliminar </a>
+                    <a  (click)="delete()" class="btn btn-warning">Eliminar </a>
                 </td>
               </tr>
           </tbody>
