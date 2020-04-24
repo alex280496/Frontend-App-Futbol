@@ -1,0 +1,23 @@
+<div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Fecha</th>
+                <th>Observaciones</th>
+                <th>Jugador</th>
+                <th>Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let amarilla of tarjeta_amarilla">
+                <td>{{amarilla.fecha}}</td>
+                <td>{{amarilla.observaciones}}</td>
+                <td>{{amarilla.nombrejugador}}</td>
+                <td>
+                    <a href="" class="btn btn-primary">Editar</a>
+                    <a href="" class="btn btn-warning">Eliminar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

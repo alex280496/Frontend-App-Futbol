@@ -23,6 +23,9 @@ import { ArbitrajesComponent } from './components/arbitraje/arbitrajes/arbitraje
 import { ArbitrajeNewComponent } from './components/arbitraje/arbitraje-new/arbitraje-new.component';
 import { ArbitrajeEditComponent } from './components/arbitraje/arbitraje-edit/arbitraje-edit.component';
 import { ArbitrajeShowComponent } from './components/arbitraje/arbitraje-show/arbitraje-show.component';
+import { TAmarillasComponent } from './components/t_amarilla/t-amarillas/t-amarillas.component';
+import { TAmarillaNewComponent } from './components/t_amarilla/t-amarilla-new/t-amarilla-new.component';
+import { TAmarillaEditComponent } from './components/t_amarilla/t-amarilla-edit/t-amarilla-edit.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +46,10 @@ import { ArbitrajeShowComponent } from './components/arbitraje/arbitraje-show/ar
     ArbitrajesComponent,
     ArbitrajeNewComponent,
     ArbitrajeEditComponent,
-    ArbitrajeShowComponent
+    ArbitrajeShowComponent,
+    TAmarillasComponent,
+    TAmarillaNewComponent,
+    TAmarillaEditComponent
   ],
   imports: [
     BrowserModule,
