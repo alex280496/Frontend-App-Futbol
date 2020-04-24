@@ -18,8 +18,8 @@
                 <td>{{datosarbitraje.valor_restante}}</td>
                 <td>{{datosarbitraje.nombrejugador}} - {{datosarbitraje.cedula}}</td>
                 <td>
-                    <a [routerLink]="['/arbitraje-edit/', datosarbitraje.id_arbitraje]" class="btn btn-primary">Editar</a>
-                    <a  (click)="delete()" class="btn btn-warning">Eliminar </a>
+                    <a [routerLink]="['/arbitraje-edit/', datosarbitraje.id_arbitraje]" class="btn btn-primary edit">Editar</a>
+                    <a  (click)="delete(datosarbitraje.id_arbitraje)" class="btn btn-warning">Eliminar </a>
                 </td>
               </tr>
           </tbody>

@@ -17,7 +17,7 @@ export class ArbitrajeNewComponent implements OnInit {
     private _router:Router,
     private _route:ActivatedRoute
   ) { 
-    this.arbitraje=new Arbitraje(null,null,null,null);
+    this.arbitraje=new Arbitraje(null,null,null,null,null);
   }
 
   ngOnInit() {

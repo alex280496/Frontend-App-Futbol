@@ -38,7 +38,7 @@ export class ArbitrajeEditComponent implements OnInit {
     if(this.arbitraje.jugador_id ==null){
       this.arbitraje.jugador_id=this.aux;
     }
-    this._arbitrajeService.updatejugador(this.arbitraje,this.arbitraje.id_arbitraje).subscribe(
+    this._arbitrajeService.updatearbitraje(this.arbitraje,this.arbitraje.id_arbitraje).subscribe(
       response=>{
         console.log(response);
         this._router.navigate(['/arbitrajes']);
