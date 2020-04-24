@@ -34,6 +34,7 @@ export class TAmarillaEditComponent implements OnInit {
     this._tarjetaAmarillaService.updateamarilla(this.tarjeta_amarilla,this.tarjeta_amarilla.id_ta).subscribe(
       response=>{
         console.log(response);
+        this._router.navigate(['/tamarillas']);
       },
       error=>{
         console.log(error);
