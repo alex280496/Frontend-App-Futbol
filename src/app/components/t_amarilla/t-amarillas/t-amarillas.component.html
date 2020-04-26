@@ -16,7 +16,7 @@
                 <td>{{datos.nombrejugador}}</td>
                 <td>
                     <a [routerLink]="['/tamarillas-edit/',datos.id_ta]" class="btn btn-primary edit">Editar</a>
-                    <a href="" class="btn btn-warning">Eliminar</a>
+                    <a (click)="delete(datos.id_ta)" class="btn btn-warning">Eliminar</a>
                 </td>
             </tr>
         </tbody>
