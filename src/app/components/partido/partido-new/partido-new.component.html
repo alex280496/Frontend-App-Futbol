@@ -1,1 +1,26 @@
-<p>partido-new works!</p>
+<div>
+    <form #partidoForm="ngForm" (ngSubmit)="onSubmit()" >
+        <div class="form-group">
+            <label for="fecha">Fecha</label>
+            <input type="date" name="fecha" class="form-control"
+            #fecha="ngModel" [(ngModel)]=partido.fecha>
+        </div>
+        <div class="form-group">
+            <label for="puntos">Puntos</label>
+            <input type="number" name="puntos" class="form-control"
+            #puntos="ngModel" [(ngModel)]=partido.puntos>
+        </div>
+        <div class="form-group">
+            <label for="rival">Rival</label>
+            <ng-select [items]="equipos"
+                   [virtualScroll]="true"
+                   bindLabel="nombre"
+                   bindValue="id_equipo"
+                   name="equipos"
+                   placeholder="Selecciona el equipo Rival"
+                   [(ngModel)]=partido.equipo_id>
+        </ng-select>
+        </div>
+        <button class="btn btn-primary">Guardar Datos</button>
+    </form>
+</div>

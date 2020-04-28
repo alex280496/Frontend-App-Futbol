@@ -30,6 +30,6 @@ export class PartidoFutbolService{
         return this._http.put(this.url + 'partidos/'+id,partido,{headers:headers})
     }
     deletepartido(id):Observable<any>{
-        return this._http.delete(this.url + 'partidos/d'+id);
+        return this._http.delete(this.url + 'partidos/'+id);
     }
 }

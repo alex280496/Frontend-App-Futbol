@@ -15,6 +15,21 @@ export class PartidosComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.listarpartidos();
+  }
+  delete(id){
+    console.log(id);
+    this._partidoService.deletepartido(id).subscribe(
+      response=>{
+        console.log(response);
+        this.listarpartidos();
+      },
+      error=>{
+        console.log(error);
+      }
+    );
+  }
+  listarpartidos(){
     this._partidoService.getpartidos().subscribe(
       response=>{
         this.partidos=response;
