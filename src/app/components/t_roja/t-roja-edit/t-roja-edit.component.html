@@ -1,0 +1,24 @@
+<form  #troja="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="fecha">Observacioes</label>
+        <input type="date" name="fecha" class="form-control"
+        #fecha="ngModel" [(ngModel)]=tarjeta_roja.fecha>
+    </div>
+    <div class="form-group">
+        <label for="observaciones">Observacioes</label>
+        <input type="text" name="observaciones" class="form-control"
+        #observaciones="ngModel" [(ngModel)]=tarjeta_roja.observaciones >
+    </div>
+    <div class="form-group">
+        <label for="jugador"> Jugador</label>
+        <ng-select [items]="jugadores"
+            [virtualScroll]="true"
+            bindLabel="nombrejugador"
+            bindValue="id"
+            name="jugadores"
+            placeholder={{tarjeta_roja.nombrejugador}}
+            [(ngModel)]="tarjeta_roja.jugador_id">
+        </ng-select>
+    </div>
+    <button class="btn btn-primary">Actualizar Datos</button>
+</form>

@@ -1,0 +1,24 @@
+<div class="container">
+    <a [routerLink]="['/trojas-new']" class="btn btn-primary">Nuevo Registro</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Fecha</th>
+                <th>Observaciones</th>
+                <th>Jugador</th>
+                <th>Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let tarojas of tarjeta_roja">
+                <td>{{tarojas.fecha}}</td>
+                <td>{{tarojas.observaciones}}</td>
+                <td>{{tarojas.nombrejugador}}</td>
+                <td>
+                    <a [routerLink]="['/trojas-edit/',tarojas.id_tr]" class="btn btn-primary edit">Editar</a>
+                    <a (click)="delete(tarojas.id_tr)" class="btn btn-warning">Eliminar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

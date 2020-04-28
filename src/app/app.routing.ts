@@ -16,6 +16,9 @@ import { ArbitrajeShowComponent } from './components/arbitraje/arbitraje-show/ar
 import { TAmarillasComponent } from './components/t_amarilla/t-amarillas/t-amarillas.component';
 import { TAmarillaNewComponent } from './components/t_amarilla/t-amarilla-new/t-amarilla-new.component';
 import { TAmarillaEditComponent } from './components/t_amarilla/t-amarilla-edit/t-amarilla-edit.component';
+import { TRojasComponent } from './components/t_roja/t-rojas/t-rojas.component';
+import { TRojaNewComponent } from './components/t_roja/t-roja-new/t-roja-new.component';
+import { TRojaEditComponent } from './components/t_roja/t-roja-edit/t-roja-edit.component';
 
 
 const appRoutes:Routes=[
@@ -33,7 +36,10 @@ const appRoutes:Routes=[
     {path:'arbitraje-show/:id',component:ArbitrajeShowComponent},
     {path:'tamarillas',component:TAmarillasComponent},
     {path:'tamarillas-new',component:TAmarillaNewComponent},
-    {path:'tamarillas-edit/:id',component:TAmarillaEditComponent}
+    {path:'tamarillas-edit/:id',component:TAmarillaEditComponent},
+    {path:'trojas',component:TRojasComponent},
+    {path:'trojas-new',component:TRojaNewComponent},
+    {path:'trojas-edit/:id',component:TRojaEditComponent}
     
 ];
 export const appRoutingProviders:any[]=[];

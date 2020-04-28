@@ -30,7 +30,7 @@ export class TarjetaRojaService{
         let headers=new HttpHeaders({'Content-Type':'application/json'});
         return this._http.put(this.url + 'trojas/'+id,tarjeta_roja,{headers:headers})
     }
-    deletejugador(id):Observable<any>{
+    deletetarjeta(id):Observable<any>{
         return this._http.delete(this.url + 'trojas/'+id);
     }
 }
