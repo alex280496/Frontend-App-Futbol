@@ -1,1 +1,23 @@
-<p>partidos works!</p>
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Fecha</th>
+                <th>Equipo Rival</th>
+                <th>Puntos</th>
+                <th>Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let partido of partidos">
+                <td>{{partido.fecha}}</td>
+                <td>{{partido.nombre}}</td>
+                <td>{{partido.puntos}}</td>
+                <td>
+                    <a [routerLink]="['/partidos-edit/',partido.id]" class="btn btn-primary edit">Editar</a>
+                    <a href="" class="btn btn-warning">Eliminar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

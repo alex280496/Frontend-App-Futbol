@@ -19,6 +19,9 @@ import { TAmarillaEditComponent } from './components/t_amarilla/t-amarilla-edit/
 import { TRojasComponent } from './components/t_roja/t-rojas/t-rojas.component';
 import { TRojaNewComponent } from './components/t_roja/t-roja-new/t-roja-new.component';
 import { TRojaEditComponent } from './components/t_roja/t-roja-edit/t-roja-edit.component';
+import { PartidosComponent } from './components/partido/partidos/partidos.component';
+import { PartidoNewComponent } from './components/partido/partido-new/partido-new.component';
+import { PartidoEditComponent } from './components/partido/partido-edit/partido-edit.component';
 
 
 const appRoutes:Routes=[
@@ -39,7 +42,10 @@ const appRoutes:Routes=[
     {path:'tamarillas-edit/:id',component:TAmarillaEditComponent},
     {path:'trojas',component:TRojasComponent},
     {path:'trojas-new',component:TRojaNewComponent},
-    {path:'trojas-edit/:id',component:TRojaEditComponent}
+    {path:'trojas-edit/:id',component:TRojaEditComponent},
+    {path:'partidos',component:PartidosComponent},
+    {path:'partidos-new',component:PartidoNewComponent},
+    {path:'partidos-edit/:id',component:PartidoEditComponent}
     
 ];
 export const appRoutingProviders:any[]=[];
